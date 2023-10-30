@@ -283,7 +283,7 @@ Fun_Status CheckStatus(ADCPar * FADC_p,Abnormalpara * AbnormalValues)
 	//To Trip the Relay when supply is abnormal
  if ((FADC_p->Vrms1 > AbnormalValues->OvVolt) && ((AbnormalValues->RelayStatus == RelayOn) || (AbnormalValues->RelayStatus == DeviceInit) || (AbnormalValues->OutPutStatus != OverVoltage))) // check OV
     {
-
+      __HAL_ADC_CHSELR_CHANNEL
     }
     else if ((FADC_p->Vrms1 < AbnormalValues->UnVlt) && ((AbnormalValues->RelayStatus == RelayOn) || (AbnormalValues->RelayStatus == DeviceInit) || (AbnormalValues->OutPutStatus != UnderVoltage))) // check UV
     {
